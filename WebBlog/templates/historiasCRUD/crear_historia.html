@@ -1,0 +1,24 @@
+{% extends "homeWeb.html" %}
+{% load static%}
+
+{%block contenido %}
+
+<link rel="stylesheet" href="{%static '/css/bootstrap.min.css'%}"> <!-- manually added -->
+<link rel="stylesheet" href="{%static '/css/miestilo.css'%}"> <!-- manually added -->
+
+<div class="d-flex justify-content-center">
+    <form class="formDataHistorias" method="POST" action="/WebBlog/crear_historia/">
+        {% csrf_token %} <!-- the class="formDataFamiliares" is for get the style from that class used previously -->
+        <input type="text" name="titulo" placeholder="Titulo">
+        <p></p> <!-- add a breakline -->
+        <input type="text" name="nombreCreador" placeholder="Creador">
+        <p></p> <!-- add a breakline -->
+        <input type="text" name="cuerpoHistoria" placeholder="Historia">
+        <p></p> <!-- add a breakline -->        
+        <input type="text" name="fechaHistoria" placeholder="Fecha historia YYYY-MM-DD">
+        <p></p> <!-- add a breakline -->
+        <button type="submit" class="btn btn-primary btndj">Guardar</button>  <!-- submit its for specify what this is a button for the form class action -->
+    </form>
+</div>
+
+{%endblock%}

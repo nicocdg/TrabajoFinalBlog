@@ -1,0 +1,57 @@
+{% extends "homeWeb.html" %}
+{% load static%}
+
+{%block contenido %}
+
+<link rel="stylesheet" href="{%static '/css/bootstrap.min.css'%}"> <!-- manually added -->
+<link rel="stylesheet" href="{%static '/css/miestilo.css'%}"> <!-- manually added -->
+{%for historia in historias %}
+<li>
+    {{historia}}
+    <a href="/WebBlog/update_historia/{{historia.id}}" class="btn btn-warning">Editar</a>
+    <a href="/WebBlog/delete_historia/{{historia.id}}" class="btn btn-danger">Borrar</a>
+
+
+</li>
+<br>  <!-- add a space after every object on the list -->
+{% endfor %}
+
+<a class="btn btn-success" href="/WebBlog/crear_historia">+ Agregar historia</a>
+
+
+<p></p> <!-- add a breakline -->
+<!-- seccion para buscar data en la DB -->
+<div class="d-flex justify-content-center">
+    <form class="formDataHistorias" action="/WebBlog/buscar_historias/" method="GET">
+        <input type="text" name="nombre" placeholder="Buscar historia por nombre">
+        <p></p> <!-- add a breakline -->
+        <div class="d-flex justify-content-center"> <button type="submit" class="btn btn-primary btndj">Buscar</button> </div>
+    </form>
+</div>
+
+<p></p> <!-- add a breakline -->
+
+<div class="d-flex justify-content-center">Resultado:</div>
+<p></p> <!-- add a breakline -->
+
+<div class="d-flex justify-content-center">
+    {% if familiares_busqueda %}
+    <ul>
+        {% for x in familiares_busqueda %}
+        Nombre: {{ x.nombre}}
+        <p></p>
+        Apellido: {{ x.apellido}}
+        <p></p>
+        Edad: {{ x.edad}}
+        <p></p>
+        Fecha Nacimiento: {{ x.fechaNacimiento}}
+        <p></p>
+        {% endfor %}
+    </ul>
+
+    {% else %}
+    <p><h5>No se encontraron datos</h5></p>
+    {% endif %}
+</div>
+
+{%endblock%}

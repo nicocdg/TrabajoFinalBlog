@@ -1,0 +1,27 @@
+.contenido {
+    position: relative;
+    top: 60px;
+    border: 1px solid blue;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*width: 1px;*/
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.contenido2 {
+    background-color: #544803;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.contenidoUsuarios {
+    background-color: #544803;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}

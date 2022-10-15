@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>Inicio</title>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" href="{%static '/css/bootstrap.min.css'%}"> <!-- manually added -->
+    <link rel="stylesheet" href="{%static '/css/miestilo.css'%}"> <!-- manually added -->
+</head>
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-dark bg-dark static-top">
+        <div class="container">
+            <!-- these class access to the functions of the urls.py file -->
+            <a class="navbar-brand" href="/WebBlog/homeWeb">Inicio</a>´
+            <!-- <a class="navbar-brand" href="/DataDB/familiares">Familiares</a>´ -->
+            <a class="navbar-brand" href="/WebBlog/read_historias">Leer historias</a>´
+            <a class="navbar-brand" href="/WebBlog/crear_historia">Crear Historia</a>´
+            <!--<a class="navbar-brand" href="/DataDB/changePW">Cambiar contraseña</a>´-->
+            <!--<a class="navbar-brand" href="/admin">Admin</a>´-->
+            <!--  <a class="navbar-brand" href="/DataDB/mesas">Mesas</a>´ -->
+            <!-- <a class="navbar-brand" href="/DataDB/index">Index</a>´ -->
+            <!-- <a class="navbar-brand" href="/DataDB/login">Login</a>´-->
+            <!--<a class="navbar-brand" href="/DataDB/register">Registrarse</a>´-->
+            <a class="navbar-brand" style="position: absolute; right: 280px" href="/DataDB/perfil">{{user.username}}</a>´
+            <a class="navbar-brand" style="position: absolute; right: 150px" href="/DataDB/login">Login</a>´
+            <a class="navbar-brand" style="position: absolute; right: 0px" href="/DataDB/sign_in">Registrarse</a>´
+           <!-- <a class="navbar-brand" style="position: absolute; right: 0px" href="/DataDB/logout/">Salir</a>´ -->
+
+        </div>
+        </nav>
+
+        <div class="contenido">
+            {%block contenido %}
+            <p> Home </p>
+            {%endblock%}
+        </div>
+
+    </body>
+    </html>
