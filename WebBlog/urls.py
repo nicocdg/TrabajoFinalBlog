@@ -6,6 +6,7 @@ from WebBlog.forms import *
 urlpatterns = [
     path('homeWeb/', homeWeb),
     path('homeNoLogin', homeNoLogin),
+    path('', homeNoLogin),
     path('crear_historia/', crear_historia),
     path('read_historias/', read_historias),
     path('delete_historia/<historia_idDB>', delete_historia),
