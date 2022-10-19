@@ -1,0 +1,25 @@
+{% extends "homeWeb.html" %}
+{% load static%}
+
+{%block contenido %}
+
+<div class="d-flex justify-content-center">Perfil</div>
+<div class="d-flex justify-content-center">
+    <ul>
+        <li>Usuario: {{ user.username }}</li>
+        <li>Email: {{ user.email }}</li>
+        <li>Nombre: {{ user.first_name }}</li>
+        <li>Apellido: {{ user.last_name }}</li>
+        <img src="{{avatar}}" width="100px">
+    </ul>
+</div>
+
+<div class="d-flex justify-content-center">
+        <ul><a class="btn btn-primary btndj" href="/WebBlog/editarPerfil">Editar Perfil</a></ul>
+        <ul><a class="btn btn-primary btndj" href="/WebBlog/changeAvatar">Cambiar imagen de perfil</a></ul>
+		<ul><a class="btn btn-primary btndj" href="/WebBlog/changePW">Cambiar contraseña</a></ul>
+        <ul><a class="btn btn-primary btndj" href="/WebBlog/logout/">Cerrar sesion</a></ul>
+        <ul><a class="btn btn-primary btndj" href="/admin">Administracion</a></ul>
+        	
+</div>
+{%endblock%}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>Inicio</title>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" href="{%static '/css/bootstrap.min.css'%}"> <!-- manually added -->
+    <link rel="stylesheet" href="{%static '/css/miestilo.css'%}"> <!-- manually added -->
+</head>
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" href="/WebBlog/homeWeb">Inicio</a>
+            <a class="navbar-brand" href="/WebBlog/read_historias">Leer historias</a>
+            <a class="navbar-brand" href="/WebBlog/crear_historia">Crear Historia</a>
+
+
+            <a class="navbar-brand" style="position: absolute; right: 100px" href="/WebBlog/perfil">{{user.username}}</a>´
+            <li class="nav-item" style="position: absolute; right: 170px">
+                <img src="{{avatar}}" width="30px"> </li>>
+
+        </div>
+        </nav>
+
+        <div class="contenido">
+            {%block contenido %}
+            <p> Home </p>
+            <div id="header-inner" style="background-image: url(&quot;https://televisa.brightspotcdn.com/dims4/default/772ec11/2147483647/strip/true/crop/1300x731+0+68/resize/1200x675!/quality/90/?url=https%3A%2F%2Ftelevisa-brightspot.s3.amazonaws.com%2Fapi%2Fd9%2F2e%2F962a87ae4f7eb87738a3729381e0%2Fquien-es-el-gato-vampiro-de-insagram.jpg&quot;); background-position: left; min-height: 920px; _height: 720px; background-repeat: no-repeat; ">
+                <div class="titlewrapper" style="background: transparent">
+                <h1 class="title" style="background: transparent; border-width: 0px">
+                Un blog pensado para gatos.
+                </h1>
+                </div>
+                <div class="descriptionwrapper">
+                <p class="description"><span>Este es un blog pensado para gatos: arte,música, información, lugares del mundo 
+                para visitar, propuestas, en fin: el Arte de Vivir. Se escribe al AMOR sin estar dirigido a nadie en particular sino a todos en general,los que hemos transitado su camino.
+                
+            </span></p>
+            </div>
+            </div>
+            {%endblock%}
+        </div>
+
+    </body>
+    </html>

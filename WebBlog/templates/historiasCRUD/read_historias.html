@@ -1,0 +1,67 @@
+{% extends "homeWeb.html" %}
+{% load static%}
+
+{%block contenido %}
+
+<link rel="stylesheet" href="{%static '/css/bootstrap.min.css'%}"> <!-- manually added -->
+<link rel="stylesheet" href="{%static '/css/miestilo.css'%}"> <!-- manually added -->
+
+<!-- seccion para buscar data en la DB -->
+<div class="d-flex justify-content-center">
+    <form class="formDataHistorias" action="/WebBlog/buscar_historias/" method="GET">
+        <input type="text" name="titulo" placeholder="Buscar historia por nombre">
+        <p></p> <!-- add a breakline -->
+        <div class="d-flex justify-content-center"> <button type="submit" class="btn btn-primary btndj">Buscar</button> </div>
+    </form>
+</div>
+
+<a class="btn btn-success" href="/WebBlog/crear_historia">+ Agregar historia</a>
+
+<div class="d-flex justify-content-center">Resultado:</div>
+<p></p> <!-- add a breakline -->
+
+<div class="d-flex justify-content-center">
+    {% if historias_busqueda %}
+    <ul>
+        {% for x in historias_busqueda %}
+        Titulo: {{ x.titulo}}
+        <p></p>
+        Historia: {{ x.cuerpoHistoria}}
+        <p></p>
+        Creador: {{ x.nombreCreador}}
+        <p></p>
+        Fecha: {{ x.fechaHistoria}}
+        <p></p>
+        {% endfor %}
+    </ul>
+
+    {% else %}
+    <p><h5>No se encontraron datos</h5></p>
+    {% endif %}
+</div>
+
+{%for historia in historias %}
+<div class="contenido">
+<li>    
+    <!--{{historia}}-->
+    Titulo: {{ historia.titulo}}
+    <p></p>
+    Historia: {{ historia.cuerpoHistoria}}
+    <p></p>
+    Creador: {{ historia.nombreCreador}}
+    <p></p>
+    Fecha: {{ historia.fechaHistoria}}
+    <p></p>
+    <a href="/WebBlog/update_historia/{{historia.id}}" class="btn btn-warning">Editar</a>
+    <a href="/WebBlog/delete_historia/{{historia.id}}" class="btn btn-danger">Borrar</a>
+</li>
+</div>
+<br>  <!-- add a space after every object on the list -->
+<br>  <!-- add a space after every object on the list -->
+<br>  <!-- add a space after every object on the list -->
+
+{% endfor %}
+
+
+
+{%endblock%}

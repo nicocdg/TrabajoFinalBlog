@@ -1,0 +1,17 @@
+{% extends "homeWeb.html" %}
+{% load static%}
+
+{%block contenido %}
+
+<link rel="stylesheet" href="{%static '/css/bootstrap.min.css'%}"> <!-- manually added -->
+<link rel="stylesheet" href="{%static '/css/miestilo.css'%}"> <!-- manually added -->
+
+<form method="POST"> {% csrf_token %}
+    <table>
+        {{formulario.as_table}}
+    </table>
+    <button type="submit" class="btn btn-success">Registrar</button>
+
+</form>
+
+{%endblock%}
